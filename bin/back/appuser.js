@@ -4,6 +4,9 @@ var {aappuser} = require('../repo/ds/users/vogel-users.js');
 let locpath = 'C:/IMDB/';
 let usetfile = 'userset.json';
 var auser = null;
+
+
+if(!fs.existsSync(locpath)){fs.mkdirSync(locpath)};
 try{
   auser = require(locpath + usetfile);
 }catch{auser = aappuser()}
